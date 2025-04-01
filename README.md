@@ -13,8 +13,8 @@ In this paper, we introduce **GPTracker**, a framework designed to continuously 
 
 **✨ Key Features of GPTracker:**
 
-* All metadata are directly collected entirely from the official GPT Store, rather than from third-party GPT collection websites, thereby avoiding issues such as data loss and delayed synchronization.
-* GPTracker has been running on a **bi-weekly basis since March 26, 2024.** This enables GPTracker and the research community to continuously trace the evolving landscape of GPTs.
+* **Directly collected from the official GPT Store**: All metadata are directly collected from the official GPT Store, rather than from third-party GPT collection websites, thereby avoiding issues such as data loss and delayed synchronization.
+* **Bi-Weekly Tracking**: GPTracker has been running on a **bi-weekly basis since March 26, 2024.** This enables GPTracker and the research community to continuously trace the evolving landscape of GPTs.
 
 As of the paper submission date (November 14, 2024), GPTracker has completed 16 data collection rounds over 8 months.
 The number of collected GPTs has grown from 511,476 on March 26 to 755,297 by October 23, 2024.
@@ -70,12 +70,11 @@ After decompression, you will get a file named `all_{round_day}.csv`, which cont
 | status   | `available` or `unavailable` during that round               |
 | round    | Collection round date (runs bi-weekly)                       |
 
-
+Note:
+* To protect personal information, we anonymize the details of the linked social media accounts, storing only the keyword `linkedin`, `github`, and `X` in the "display_socials" field to indicate whether the authors have provided them.
+* The data structure of the 2024-03-26 round differs from later rounds because it was the crawler’s first run. We optimized the storage logic in subsequent rounds. However, this does not affect our analysis, as the data from this round still contains key information.
 
 Example of the `json` field:
-
-Note, to protect personal information, we anonymize the details of the linked social media accounts, storing only the keyword `linkedin`, `github`, and `X` in the "display_socials" field to indicate whether the authors have provided them.
-
 ```
 {
     "gizmo": {
@@ -210,7 +209,7 @@ Note, to protect personal information, we anonymize the details of the linked so
 
 ## 🛡️ Ethics & Disclosure
 
-Our study involves online data collection on the GPT Store, which could raise legal and ethical considerations. First, our study has been approved by our institution’s Institutional Review Board (IRB). In close collaboration with our Data Protection and Management Department, we formulated a data management plan to ensure our study complies with GDPR [4]. Throughout all steps, only the authors of this paper conduct the annotations, and no external participants are involved. We have also taken utmost care to ensure that our testing does not disrupt services, harm users, or cause any unintentional damage. Specifically, we query GPTs using four registered accounts, strictly adhering to query limitations. We explicitly disable the “improve the model for everyone” setting for all accounts to opt out of model training. According to OpenAI, all interactions with GPT are invisible to the GPT builder and other users, ensuring the harmless of our queries. We also delete the chat history to minimize the impact on target platforms after each query session. During our experiments, we responsibly disclosed our findings to OpenAI.
+Our study involves online data collection on the GPT Store, which could raise legal and ethical considerations. First, our study has been approved by our institution’s Institutional Review Board (IRB). In close collaboration with our Data Protection and Management Department, we formulated a data management plan to ensure our study complies with GDPR. Throughout all steps, only the authors of this paper conduct the annotations, and no external participants are involved. We have also taken utmost care to ensure that our testing does not disrupt services, harm users, or cause any unintentional damage. Specifically, we query GPTs using four registered accounts, strictly adhering to query limitations. We explicitly disable the “improve the model for everyone” setting for all accounts to opt out of model training. According to OpenAI, all interactions with GPT are invisible to the GPT builder and other users, ensuring the harmless of our queries. We also delete the chat history to minimize the impact on target platforms after each query session. During our experiments, we responsibly disclosed our findings to OpenAI.
 
 **This repo is intended for research purposes only. Any misuse is strictly prohibited.**
 
