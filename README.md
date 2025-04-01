@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="gptracker.jpg" width="70%">
-</p>
-
 # 👣 GPTracker
 
 [![S&P: 2025](https://img.shields.io/badge/IEEE_S&P-2025-red.svg)]()
@@ -14,12 +10,13 @@ In this paper, we introduce **GPTracker**, a framework designed to continuously 
 **✨ Key Features of GPTracker:**
 
 * **Directly collected from the official GPT Store**: All metadata are directly collected from the official GPT Store, rather than from third-party GPT collection websites, thereby avoiding issues such as data loss and delayed synchronization.
-* **Bi-Weekly Tracking**: GPTracker has been running on a **bi-weekly basis since March 26, 2024.** This enables GPTracker and the research community to continuously trace the evolving landscape of GPTs.
+* **Bi-Weekly tracking**: GPTracker has been running bi-weekly since March 26, 2024. We sincerely hope these continuous efforts can help the research community better understand the evolving landscape of GPTs.
 
-As of the paper submission date (November 14, 2024), GPTracker has completed 16 data collection rounds over 8 months.
-The number of collected GPTs has grown from 511,476 on March 26 to 755,297 by October 23, 2024.
 
-[TOC]
+<p align="center">
+  <img src="gptracker.jpg" width="70%">
+</p>
+
 
 
 ## 📰 Update Logs
