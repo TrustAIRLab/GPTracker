@@ -3,7 +3,7 @@
 [![S&P: 2025](https://img.shields.io/badge/IEEE_S&P-2025-red.svg)]()
 [![license](https://img.shields.io/badge/License-GPL_3.0-blue)](#license)
 
-This is the official repository of the IEEE S&P 2025 paper [**GPTracker: A Large-Scale Measurement of Misused GPTs**]().
+This is the official repository of the IEEE S&P 2025 paper [**GPTracker: A Large-Scale Measurement of Misused GPTs**]()  by [Xinyue Shen](https://xinyueshen.me/), Yun Shen, [Michael Backes](https://michaelbackes.eu/), and [Yang Zhang](https://yangzhangalmo.github.io/).
 
 In this paper, we introduce **GPTracker**, a framework designed to continuously collect GPTs from the [official GPT Store](http://chat.openai.com/gpts) and automate the interaction with them.
 
@@ -56,16 +56,16 @@ To decompress, use the following command:
 * `-k`: Keep the original compressed file.
 * `-T0`: Use all available CPU threads to speed up decompression.
 
-After decompression, you will get a file named `all_{round_day}.csv`, which contains the following 5 columns:
+After decompression, you will get a file named `all_{round_date}.csv`, which contains the following 5 columns:
 
 
 | Column   | Description                                                  |
 | -------- | ------------------------------------------------------------ |
-| gizmo_id | Unique GPT ID                                                |
+| gizmo_id | Unique GPT ID, e.g.,                                                |
 | from     | `search` (discovered via keyword search) or `fill` (accessed directly via URL), check the paper for details. |
 | json     | GPT metadata (see example below)                             |
 | status   | `available` or `unavailable` during that round               |
-| round    | Collection round date (runs bi-weekly)                       |
+| round    | Round date (runs bi-weekly), e.g., 2024-10-23                      |
 
 Note:
 * To protect personal information, we anonymize the details of the linked social media accounts, storing only the keyword `linkedin`, `github`, and `X` in the "display_socials" field to indicate whether the authors have provided them.
@@ -200,7 +200,22 @@ Example of the `json` field:
 
 ## 🤖 LLM-Driven Scoring System
 
+We leverage ChatGPT to score the risks of GPTs.
 
+Install the essential packages:
+```
+pip install pandas numpy tqdm openai tiktoken
+```
+
+Put your OpenAI API Key in `run_llm_driven_scoring_system.py`
+```
+APIKEY = ""
+```
+
+Then run
+```
+python run_llm_driven_scoring_system.py --round_date 2024-10-23
+```
 
 
 
