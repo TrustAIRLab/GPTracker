@@ -61,11 +61,11 @@ After decompression, you will get a file named `all_{round_date}.csv`, which con
 
 | Column   | Description                                                  |
 | -------- | ------------------------------------------------------------ |
-| gizmo_id | Unique GPT ID, e.g.,                                                |
+| gizmo_id | Unique GPT ID, e.g., `g-9upSdCEcq`                           |
 | from     | `search` (discovered via keyword search) or `fill` (accessed directly via URL), check the paper for details. |
 | json     | GPT metadata (see example below)                             |
 | status   | `available` or `unavailable` during that round               |
-| round    | Round date (runs bi-weekly), e.g., 2024-10-23                      |
+| round    | Round date (runs bi-weekly), e.g., `2024-10-23`                |
 
 Note:
 * To protect personal information, we anonymize the details of the linked social media accounts, storing only the keyword `linkedin`, `github`, and `X` in the "display_socials" field to indicate whether the authors have provided them.
@@ -195,8 +195,12 @@ Example of the `json` field:
 ```
 
 
+### 🕷️ Crawler Logic
 
+Each crawling round consists of two steps:
 
+1. We use [10,000 most common English words](https://github.com/first20hours/google-10000-english) as the search terms and a web crawler powered by [Playwright](https://playwright.dev/) to retrieve each word to [the GPT Store search interface](https://chatgpt.com/gpts) and collect the metadata of returned GPTs.
+2. If a previously collected GPT does not appear in the current search round (possibly because the builder has made it private), we proactively visit the URL of the GPT to obtain its status in that round.
 
 ## 🤖 LLM-Driven Scoring System
 
@@ -204,7 +208,7 @@ We leverage ChatGPT to score the risks of GPTs.
 
 Install the essential packages:
 ```
-pip install pandas numpy tqdm openai tiktoken
+pip install pandas numpy tqdm openai
 ```
 
 Put your OpenAI API Key in `run_llm_driven_scoring_system.py`
