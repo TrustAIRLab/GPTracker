@@ -3,7 +3,7 @@
 [![S&P: 2025](https://img.shields.io/badge/IEEE_S&P-2025-red.svg)]()
 [![license](https://img.shields.io/badge/License-GPL_3.0-blue)](#license)
 
-This is the official repository of the IEEE S&P 2025 paper [**GPTracker: A Large-Scale Measurement of Misused GPTs**]()  by [Xinyue Shen](https://xinyueshen.me/), Yun Shen, [Michael Backes](https://michaelbackes.eu/), and [Yang Zhang](https://yangzhangalmo.github.io/).
+This is the official repository of the IEEE S&P 2025 paper [**GPTracker: A Large-Scale Measurement of Misused GPTs**](https://xinyueshen.me/papers/SP25-GPTracker.pdf)  by [Xinyue Shen](https://xinyueshen.me/), Yun Shen, [Michael Backes](https://michaelbackes.eu/), and [Yang Zhang](https://yangzhangalmo.github.io/).
 
 In this paper, we introduce **GPTracker**, a framework designed to continuously collect GPTs from the [official GPT Store](http://chat.openai.com/gpts) and automate the interaction with them.
 
